@@ -31,6 +31,19 @@ const Login = (props) => {
         setCredentials({...credentials,[e.target.name]:e.target.value});
         // console.log({email:credentials.email,password:credentials.password});
     }
+    
+    // function handlelogin(){
+    //     let invalidemail=document.getElementById('invalidemail');
+    //     let invalidpassword=document.getElementById('invalidpassword');
+    //     let email=document.getElementById('email').value;
+    //     let password=document.getElementById('password').value;
+    //     if(email===""){
+    //         invalidemail.innerHTML="Please enter email";
+    //     }
+    //     else if(password===""){
+    //         invalidpassword.innerHTML="Please enter password";
+    //     }
+    // }
     return (
         <div>
             <form onSubmit={handleSubmit} style={{marginTop:'14px'}}>
@@ -38,12 +51,14 @@ const Login = (props) => {
                 <div className="mb-3">
                   <label htmlFor="Email" className="form-label">Email</label>
                   <input type="Email" className="form-control" id="email" name='email' value={credentials.email} onChange={onChange}/>
+                  <small id='invalidemail' style={{color:"red"}}></small>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Password" className="form-label">Password</label>
                   <input type="Password" className="form-control" id="password" name='password' value={credentials.password} onChange={onChange}/>
+                  <small id='invalidpassword' style={{color:"red"}}></small>
                 </div>
-                <button type="submit" className="btn" style={{backgroundColor:"black",color:"white"}}> Login</button>
+                <button type="submit" className="btn" style={{backgroundColor:"black",color:"white"}} > Login</button>
             </form>
         </div>
     );
