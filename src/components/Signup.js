@@ -19,7 +19,7 @@ const Signup = (props) => {
         if(credentials.name!==""&&credentials.email!==""&&credentials.password!==""&&credentials.cpassword!==""){
             if(json.success && json.typeSuccess==="accountcreated"){
                 // localStorage.setItem("token",json.authtoken);
-                props.showalert("Account created successfully","success");
+                props.showalert("Your account created successfully","success");
                 navigate('/login');
                 // history.push("/");
             }
@@ -28,7 +28,7 @@ const Signup = (props) => {
                     props.showalert("Email already exists, please try another account","danger");
                 }
                 else if(json.typeSuccess==="passwordsnotmatch"){
-                    props.showalert("Password and confirm password are not match","danger");
+                    props.showalert("Password and confirm password not match","danger");
                 }
             }
         }

@@ -24,7 +24,7 @@ const Login = (props) => {
             // history.push("/");
         }
         else{
-            props.showalert("Invalid email or password","danger");
+            props.showalert("Invalid email or password, please try again","danger");
         }
     }
     const onChange=(e)=>{

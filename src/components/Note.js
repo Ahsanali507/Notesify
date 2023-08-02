@@ -13,7 +13,7 @@ const Note = (props) => {
         fetchAllNotes();
       }
       else{
-        props.showalert("You have to login first","danger");
+        props.showalert("You can't access login first","danger");
         navigate('/login');
       }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -64,7 +64,7 @@ const Note = (props) => {
         </div> */}
         <div className='row my-3'>
             <h2>Your notes</h2>
-            {notes.length===0 && "No notes to display please add notes first"}
+            {notes.length===0 && "No notes found please add notes first"}
             {notes.map((note)=>{
                 return <NoteItem key={note._id} note={note}/>
             })}
